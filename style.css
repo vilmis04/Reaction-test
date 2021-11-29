@@ -1,23 +1,46 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 header {
   float: left;
   padding-left: 3rem;
 }
 
 main {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: relative;
   top: 0;
   left: 0;
 }
 
-main div {
-  height: 100px;
-  width: 100px;
-  background-color: green;
-  border-radius: 0%;
+main .inputs {
+  margin-left: 30rem;
+}
+
+main .inputs p {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+main .inputs .start {
+  display: inline-block;
+  padding: 1rem;
+  border: 1px black solid;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+main .inputs .start:hover {
+  background-color: black;
+  color: white;
+}
+
+main .btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
 }
 /*# sourceMappingURL=style.css.map */
