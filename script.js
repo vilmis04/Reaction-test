@@ -1,5 +1,6 @@
 const MIN_SIZE = 100;
 const MAX_SIZE = 400;
+const MAX_WAIT = 2000; //in miliseconds, i.e., 3s = 3000ms;
 const trig = document.querySelector(".btn");
 
 
@@ -24,12 +25,18 @@ function setShape() {
     trig.style.borderRadius = Math.round(Math.random())*50+"%";
 }
 
+function cooldownTime() {
+    trig.style.width = "0";
+    // displayTimer();
+    setTimeout(triggerChange, Math.round(Math.random()*MAX_WAIT));
+}
+
 function triggerChange() {
+    // startTimer();
     setSize();
     setColor();
     setPosition();
     setShape();
-    //setInterval();
 }
 
-trig.addEventListener("click", triggerChange);
+trig.addEventListener("click", cooldownTime);
