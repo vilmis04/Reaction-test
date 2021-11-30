@@ -3,10 +3,13 @@ const MAX_SIZE = 400;
 const MAX_WAIT = 2000; //in miliseconds, i.e., 3s = 3000ms;
 
 const trig = document.querySelector(".btn");
-const duration = document.querySelector("span");
+const duration = document.querySelector("#current-score");
 const startBtn = document.querySelector(".start");
+const highScoreDisplay = document.querySelector("#best");
+const resetBtn = document.querySelector(".reset");
 
 let start;
+let highScore = Number.MAX_SAFE_INTEGER;
 
 function setSize() {
     const size = MIN_SIZE + Math.floor(Math.random()*MAX_SIZE);
@@ -32,9 +35,15 @@ function startTimer () {
     start = new Date();
 }
 
+function isHighScore(score) {
+    highScore = score<highScore ? score : highScore;
+}
+
 function displayTimer() {
     let end = new Date();
-    duration.textContent = (end.getTime() - start.getTime())/1000 + " s";
+    let reactionTime = (end.getTime() - start.getTime())/1000;
+    duration.textContent = reactionTime + " s";
+    highScoreDisplay.textContent = isHighScore(reactionTime) + " s";
 }
 
 function cooldownTime() {
@@ -53,3 +62,6 @@ function triggerChange() {
 
 startBtn.addEventListener("click", triggerChange);
 trig.addEventListener("click", cooldownTime);
+resetBtn.addEventListener("click", () => {
+    window.location.reload();
+});

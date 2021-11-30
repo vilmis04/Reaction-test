@@ -27,7 +27,8 @@ main .inputs p {
   padding-top: 1rem;
 }
 
-main .inputs .start {
+main .inputs .start,
+main .inputs .reset {
   display: inline-block;
   padding: 1rem;
   border: 1px black solid;
@@ -35,7 +36,8 @@ main .inputs .start {
   cursor: pointer;
 }
 
-main .inputs .start:hover {
+main .inputs .start:hover,
+main .inputs .reset:hover {
   background-color: black;
   color: white;
 }
