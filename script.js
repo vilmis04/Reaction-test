@@ -36,7 +36,10 @@ function startTimer () {
 }
 
 function isHighScore(score) {
-    highScore = score<highScore ? score : highScore;
+    if (score<highScore) {
+        highScore = score;
+    }
+    return highScore;
 }
 
 function displayTimer() {
