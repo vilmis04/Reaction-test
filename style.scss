@@ -23,14 +23,16 @@ main {
             margin-top: 0;
             padding-top: 1rem;
         }
-       .start {
+       .start,
+       .reset {
         display: inline-block;
         padding: 1rem;
         border: 1px black solid;
         font-weight: bold;
         cursor: pointer;
         }   
-        .start:hover {
+        .start:hover,
+        .reset:hover {
         background-color: black;
         color: white;
         } 
